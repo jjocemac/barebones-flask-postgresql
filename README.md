@@ -1,7 +1,7 @@
 # README
 
 ## To use the barebones-flask-postgresql app as a starting point:
-- Create new repo on GitHub. In Quick Setu0p, copy URL (do not initialize the new reop with README, license, or gitignore file)
+- Create new repo on GitHub. In Quick Setup, copy URL (do not initialize the new reop with README, license, or gitignore file)
 - In a local shell:
 ```sh
 $ cd ~/gitRepos
@@ -13,7 +13,7 @@ $ git init
 $ git add .
 $ git commit -m "First commit"
 $ git remote add origin <remote-repository-URL-copied-from-GitHub>
-$ git push
+$ git push -u origin master
 ```
 - Set up pipenv:
 ```sh
@@ -27,5 +27,8 @@ $ echo "pipenv shell; " > .env
 $ echo 'export APP_SETTINGS="config.DevelopmentConfig"' >> .env
 ```
 - Create heroku app:
+```sh
 $ heroku create <unique-app-name>
+$ heroku config:set APP_SETTINGS=config.ProductionConfig
 $ git push heroku master
+```
