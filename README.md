@@ -26,9 +26,29 @@ $ pipenv shell
 $ echo "pipenv shell; " > .env
 $ echo 'export APP_SETTINGS="config.DevelopmentConfig"' >> .env
 ```
+- Setup postgresql:
+- If on foe-linux, do the following:
+```sh
+$ initdb -D ~/postgres/data/
+$ postgres -D ~/postgres/data/
+```
+- Then (on all systems):
+```sh
+$ psql
+# create database <database_name>;
+# \q
+$ export DATABASE_URL="postgresql://localhost/<database_name>"
+$ echo 'export DATABASE_URL="postgresql://localhost/<database_name>"' >> .env
+$ python manage.py db init
+$ python manage.py db migrate
+$ python manage.py db upgrade
+```
+
 - Create heroku app:
 ```sh
 $ heroku create <unique-app-name>
 $ heroku config:set APP_SETTINGS=config.ProductionConfig
 $ git push heroku master
+$ heroku addons:create heroku-postgresql:hobby-dev
+$ heroku run python manage.py db upgrade
 ```

@@ -11,3 +11,7 @@ python_version = "3.4"
 [packages]
 flask = "*"
 gunicorn = "*"
+"psycopg2" = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-script = "*"
