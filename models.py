@@ -6,8 +6,8 @@ class Result(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String())
 
-    def __init__(self, url):
-        self.url = url
+    def __init__(self, text):
+        self.text = text
 
     def __repr__(self):
         return '<id {}>'.format(self.id)

@@ -1,5 +1,11 @@
 # README
 
+## If app is set up
+- Ensure virtual environment is live, and run using:
+```sh
+$ python manage.py runserver
+```
+
 ## To use the barebones-flask-postgresql app as a starting point:
 - Create new repo on GitHub. In Quick Setup, copy URL (do not initialize the new reop with README, license, or gitignore file)
 - In a local shell:
